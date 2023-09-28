@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+      *{
+        margin:0;
+        padding: 0;
+        font-family: "Poppins",sans-serif;
+    }
+    nav{
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: #fff;
+        height:100px;
+        margin-right: -10px;
+        background-image: url();
+    }
+    .nav-links{
+      flex: 10;
+      text-align: right;
+    }
+    .nav-links ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 8px 10px;
+        position:relative;
+        color:#000000;
+    }
+    .nav-links ul li a{
+        color: #000000;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .nav-links ul li::after{
+        content: '';
+        width :0%;
+        height: 2px;
+        background: #f44336;
+        display:block;
+        margin: auto;
+        transition: 0.5s;
+    }
+    .nav-links ul li:hover::after{
+        width: 100%;
+    }
+    
+    .carousel-item{
+        min-height: 280px;
+    }
+    .header{
+        min-height: min-content;
+        max-width: 100%;
+        border: 1px solid;
+        box-shadow: 1px 2px 10px grey;
+    }
+    .button{
+        background-color: #ff6600; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        border-radius: 12px;
+      }
+      .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(54, 54, 54, 0.24),0 17px 20px 0 rgba(117, 113, 113, 0.19);
+      }
+    #products{
+        width: 100%;
+        color: #ffffff;
+        text-shadow: 2px 3px grey;
+        background-color: #ff0000;
+        font-size: 50px;
+        font-family: poppins;
+        line-height: 1.80857;
+        font-weight: normal;
+        overflow-x: hidden;
+    }
+    .pdn-top-30 {
+        padding-top: 60px;
+    }
+    .footer {
+        background-color: #051108;
+        text-align: center;
+        font-family: poppins;
+    }
+    .footer .headinga h3 {
+        
+        font-size: 38px;
+       display: block;
+       color: #fff;
+       max-width: 850px;
+       padding-bottom: 1px;
+       border-bottom: #fff solid 1px;
+       text-align: center;
+       margin: 0 auto;
+        margin-bottom: 0px;
+       margin-bottom: 30px;
+    
+    }
+    .footer .headinga span {
+        
+        font-size: 17px;
+        display: block;
+        color: #fff;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .footer .headinga p {
+        
+        font-size: 17px;
+        display: block;
+        color: #fff;
+        line-height: 30px;
+    }
+    ul.link li {
+        display: inline-block;
+        padding: 8px 15px;
+        
+        
+    }
+    ul.link li a {
+        color: #fff;
+        font-size: 17px;
+        
+    }
+    ul.link li a:hover {
+        color: #ff0000;
+    }
+    
+    ul.location_icon {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 5px;
+    }
+    ul.location_icon li {
+        float: left;
+        height: 60px;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-right: 20px;
+    }
+    ul.location_icon li:last-child {
+        padding-right: 0px;
+    }
+    ul.location_icon li a {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border: solid #fff 1px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 100%;
+    font-size: 18px;
+    } 
+    
+    ul.location_icon li a:hover {
+        background: #ff0000;
+    border: solid #ff0000 1px;        
+    color: #fff;
+    }
+    
+    ul.location_icon span {
+        font-size: 17px;
+        font-weight: 400;
+    }
+    .copyright {
+        background: #051108;
+        padding: 20px 0px 20px 0;
+        margin-top: 50px;
+    }
+    .copyright p {
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .copyright a {
+        color: #ffffff;
+    }
+    .copyright a:hover {
+        color: #ff0000;
+    }
+    .btn-primary.focus,
+    .btn-primary:focus {
+        box-shadow: inherit;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 250px;
+        max-height:fit-content;
+        margin: auto;
+        font-family: arial;
+      }
+    .card-container{
+          display: flex;
+          flex-direction: column;
+          height: 200vh;
+          align-items: center;
+          justify-content: space-evenly;
+          border: 2px solid #000000;
+      }
+      .upper-card {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-evenly;
+      }
+      .lower-card{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-evenly
+        ;
+      }
+      .price {
+        color: grey;
+        font-size: 22px;
+      }
+      
+      .card button {
+        border: none;
+        outline: 0;
+        padding: 5px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+      
+      .card button:hover {
+        opacity: 0.7;
+      }
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+      }
+      
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        flex-direction: row;
+        align-items: first baseline;
+      }
+      
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+      
+      .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+      }
+      .logo{
+        height: 80px;
+        width: 80px;
+       margin-bottom: -95px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    </head>
+    <body>
+    
+    <section class="header">
+       <img  class="logo" src="./images/logo1.png">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 24 24"><path fill="black" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0c.41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Brands</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="black" d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25c0-.05.01-.09.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2Z"/></svg></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="black" fill-rule="evenodd" clip-rule="evenodd"><path d="M16 9a4 4 0 1 1-8 0a4 4 0 0 1 8 0Zm-2 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z"/><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1ZM3 12c0 2.09.713 4.014 1.908 5.542A8.986 8.986 0 0 1 12.065 14a8.984 8.984 0 0 1 7.092 3.458A9 9 0 1 0 3 12Zm9 9a8.963 8.963 0 0 1-5.672-2.012A6.992 6.992 0 0 1 12.065 16a6.991 6.991 0 0 1 5.689 2.92A8.964 8.964 0 0 1 12 21Z"/></g></svg></li>
+                    <li><button class="button button2"><a href="/">LogOut</a></button></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+    
+          <div class="item active">
+            <img src="./images/cggg.JPG" alt="Classical guitar" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>up to 20% Flat Sale</h3>
+              <p>The C40II is one of Yamaha's most inexpensive full-size classical models, but its quality 
+                <br>and tone are outstanding. A real bargain for beginners.</p>
+                <a class="buynow" href="#">Buy Now</a>
+            </div>
+          </div>
+    
+          <div class="item">
+            <img src="./images/less.jpg" alt="Electric Guitar" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Frame Less Guitars</h3>
+              <h3>up to 19% Flat Sale</h3>
+              <p>The compact and lightweight Silent Guitar is the perfect instrument for practice, travel, and live performance.
+              <br> the Studio Response Technology (SRT) Powered preamp system delivers natural-sounding acoustic tone <br> headphones or the line output.</p>
+              <a class="buynow" href="#">Buy Now</a>
+            </div>
+          </div>
+        
+          <div class="item">
+            <img src="./images/fgdfhdikfol.JPG" alt="Electric Guitar" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Electric Guitar</h3>
+              <h3>up to 25% Flat Sale</h3>
+              <p> Pacifica combines renowned Yamaha build quality and playability with superb tone. 
+                <br> The Pacifica 012 is our most affordable electric Guitar.</p>
+            <a class="buynow" href="#">Buy Now</a>
+            </div>
+          </div>
+      
+        </div>
+    
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <section class="products">
+         <h3 id="products">Products</h3>
+         <div class="card-container">
+            <div class="upper-card">
+         <div class="card">
+            <img src="./images/electric_.jpg" alt="" style="height: 150px;">
+            <h1>fender electric </h1>
+            <p class="price">₹16,000</p>
+            <p>The Squier Sonic Stratocaster HSS MN is a premium example of high-quality guitar engineering.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+          <div class="card">
+            <img src="./images/fghgb.JPG" alt=""style="height: 150px;" >
+            <h1> Ibanez GRGR131EX GIO </h1>
+            <p class="price">₹21,000</p>
+            <p>Excel with quality. The Ibanez GRGR131EX GIO presents an affordable guitar that still receives</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+          <div class="card">
+            <img src="./images/61m09U2eMvL._AC_UF894_1000_QL80_-removebg-preview.png" alt="" style="height: 150px;">
+            <h1>Yamaha FX 280C</h1>
+            <p class="price">₹13,000</p>
+            <p>model provide a great quality sound and natural plugin sound withy jumbo body.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+        <div class="lower-card">
+          <div class="card">
+            <img src="./images/1000112279-01.jpeg.jpg" alt=""style="height: 150px;" >
+            <h1>Classical guitar</h1>
+            <p class="price">₹23,000</p>
+            <p>softer tones producer and a good choice for younger player</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+          <div class="card">
+            <img src="./images/Captuedture.JPG" alt="" style="height: 150px;" >
+            <h1>Gibson electric guitar</h1>
+            <p class="price">₹14,000</p>
+            <p>great guitar for professional and good electric guitar</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+          <div class="card">
+            <img src="./images/kempacijpeg.jpeg" alt="" style="height: 150px;" >
+            <h1>Kempa guitar</h1>
+            <p class="price">₹14,000</p>
+            <p>great guitar for professional and good semi acoustic guitar</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+    </div>
+    </section>
+    
+    <section class="middle">
+        <h3 id="products">Brands</h3>
+        <div class="flip-card">
+            <!-- first card -->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="./images/Yamaha-Logo.png" alt="yamaha" style="width:200px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>Yamaha</h1> 
+                <p>since 1969</p> 
+                <p>Yamaha Corporation is a Japanese musical instrument and audio equipment manufacturer.</p>
+              </div>
+            </div>
+           <!-- second card -->
+            <div class="flip-card-inner">
+               <div class="flip-card-front">
+                  <img src="./images/givsonlogd.png" alt="givson" style="width:200px;height:200px;">
+                </div>
+               <div class="flip-card-back">
+                  <h1>givson</h1> 
+                   <p>since 1969</p> 
+                   <p>Givson Corporation is a Japanese musical instrument and audio equipment manufacturer.</p>
+                </div>
+            </div>
+          <!-- third card -->
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                 <img src="./images/cort.jpeg" alt="cort" style="width:200px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                  <h1>Cort</h1> 
+                  <p>since 2000</p> 
+                  <p>Cort Corporation is a Japanese musical instrument and audio equipment manufacturer.</p>
+              </div>
+             </div>
+         </div>
+         
+          
+     </div>
+    </section>
+    <footer>
+        <div id="contact" class="footer">
+            <div class="container">
+                <div class="row pdn-top-30">
+                    <div class="col-md-12 ">
+                        <div class="footer-box">
+                            <div class="headinga">
+                                <h3>Address</h3>
+                                <span>Vishnu Institute of Technology,Vishnupur,Bhimavaram,Andhar Pradesh,INDIA</span>
+                                <p>(+91) 8522369417
+                                    <br>demo@gmail.com</p>
+                            </div>
+                            <div class="menu-bottom">
+                                <ul class="link">
+                                    <li> <a href="#">Home</a></li>
+                                    <li> <a href="#">About</a></li>
+                                    
+                                    <li> <a href="#">Brands </a></li>
+                                    <li> <a href="#">Products</a></li>
+                                    <li> <a href="#"> Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>© 2019 All Rights Reserved. Full stack capstone project</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
